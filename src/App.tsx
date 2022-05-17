@@ -22,6 +22,7 @@ function App() {
       <div>
         <h1>Rick and Morty</h1>
         <select onChange={filteredValueDetecter}>
+          <option value="" selected>Select</option>
           <option value="Rick">Rick</option>
           <option value="Morty">Morty</option>
         </select>
