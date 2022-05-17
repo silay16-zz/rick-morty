@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { from, useQuery } from "@apollo/client";
-import { CHARACTERS_QUERY } from "./useCharQuery";
-import "./characterList.css";
+import { CHARACTERS_QUERY } from "../common/useCharQuery";
+import "../styles/characterList.css";
 import CharacterList from "./charList.component";
-import { CharData, SendData, Character } from "./interfaces";
-import { CallWaypoint } from "./waypoint";
+import { CharData, SendData, Character } from "../common/interfaces";
+import { CallWaypoint } from "../common/waypoint";
 interface Test {
     name: string | ""
 }
