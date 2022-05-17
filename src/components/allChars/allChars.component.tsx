@@ -1,18 +1,18 @@
 import React, { useState } from "react";
 import { from, useQuery } from "@apollo/client";
-import { CHARACTERS_QUERY } from "../common/useCharQuery";
-import "../styles/characterList.css";
-import CharacterList from "./charList.component";
-import { CharData, SendData, Character } from "../common/interfaces";
-import { CallWaypoint } from "../common/waypoint";
+import { CHARACTERS_QUERY } from "../../common/useCharQuery";
+import "./characterList.css";
+import CharacterList from "../charList.component";
+import { CharData, SendData, Character } from "../../common/interfaces";
+import { CallWaypoint } from "../../common/waypoint";
 interface Test {
     name: string | ""
 }
 const AllCharactersList: React.FC<Test> = (test) => {
-    const { name } = test;
+
     let filtered = test.name;
     const { loading, data, error, fetchMore } = useQuery<CharData, SendData>(CHARACTERS_QUERY, {
-        variables: { page: 1, name: "" },
+        variables: { page: 1, name: filtered },
     });
     var characters = loading || !data ? [] : data.characters.results;
 
@@ -23,7 +23,7 @@ const AllCharactersList: React.FC<Test> = (test) => {
         fetchMore({
             variables: {
                 page: characters.length / 20 + 1,
-                name: filtered//Test 
+
             },
             updateQuery: (prev, { fetchMoreResult }) => {
                 if (!fetchMoreResult) return prev;

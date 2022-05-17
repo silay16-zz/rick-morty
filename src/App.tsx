@@ -1,12 +1,10 @@
 import React, { useState } from 'react';
-import '../styles/App.css';
-import AllCharactersList from './allChars.component';
+import './styles/App.css';
+import AllCharactersList from './components/allChars/allChars.component';
 import {
   ApolloClient,
   InMemoryCache,
   ApolloProvider,
-  useQuery,
-  gql
 } from "@apollo/client";
 
 const client = new ApolloClient({
