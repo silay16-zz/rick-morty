@@ -1,20 +1,20 @@
 import React, { useState } from "react";
 import { from, useQuery } from "@apollo/client";
-import { CHARACTERS_QUERY } from "../../common/useCharQuery";
+import { charQuery } from "../../common/useCharQuery";
 import "./characterList.css";
 import CharacterList from "../charList.component";
-import { CharData, SendData, Character } from "../../common/interfaces";
+import { ICharData, ISendData, Character } from "../../common/interfaces";
 import { CallWaypoint } from "../../common/waypoint";
-interface Test {
+interface ITest {
     name: string | ""
 }
-const AllCharactersList: React.FC<Test> = (test) => {
+const AllCharactersList: React.FC<ITest> = (test) => {
 
-    let filtered = test.name;
-    const { loading, data, error, fetchMore } = useQuery<CharData, SendData>(CHARACTERS_QUERY, {
+    const filtered = test.name;
+    const { loading, data, error, fetchMore } = useQuery<ICharData, ISendData>(charQuery, {
         variables: { page: 1, name: filtered },
     });
-    var characters = loading || !data ? [] : data.characters.results;
+    const characters = loading || !data ? [] : data.characters.results;
 
     if (loading) return <p>Loading...</p>;
     if (error) return <p>Error</p>;

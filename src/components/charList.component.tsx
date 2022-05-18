@@ -1,15 +1,15 @@
 import React from "react";
 //allCharstan gelen data type 
-interface Props {
+interface IProps {
     id?: number | null;
     image?: string | null;
-    name?: String | null;
+    name?: string | null;
     location: {
-        name?: String | null;
+        name?: string | null;
     };
 }
 
-const CharList: React.FC<Props> = (props) => {
+const CharList: React.FC<IProps> = (props) => {
     const { id, image, name, location } = props;
 
     return (

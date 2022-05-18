@@ -1,7 +1,7 @@
-export interface CharData {
+export interface ICharData {
     characters: Characters,
 }
-export interface SendData {
+export interface ISendData {
     page: number,
     name: string,
 }

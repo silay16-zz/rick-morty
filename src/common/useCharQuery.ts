@@ -1,6 +1,6 @@
 import {gql} from '@apollo/client';
 
-export const CHARACTERS_QUERY = gql`
+export const charQuery = gql`
 query getCharacters(
     $page: Int,
     $name: String,   
