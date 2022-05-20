@@ -9,7 +9,7 @@ export const CallWaypoint: any = ({
 }: any) => {
     return (
         <div>
-            {indexProp === listProp.length - 2 && (
+            {indexProp === listProp.length-3 && (
                 <Waypoint
                     onEnter={() => {
                         if (next !== null) {

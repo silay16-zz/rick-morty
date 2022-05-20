@@ -14,10 +14,11 @@ function App() {
   };
   return (
     <>
-      <div>
-        <h1>Rick and Morty</h1>
-        <select onChange={filteredValueDetecter}>
-          <option value="" selected>
+      <div className="heading">
+        {filteredName===""&&<h1 >Rick and Morty</h1>}
+        {filteredName!==""&&<h1 >{filteredName}</h1>}
+        <select onChange={filteredValueDetecter} className="dropdown">
+          <option value="">
             Select
           </option>
           <option value="Rick">Rick</option>

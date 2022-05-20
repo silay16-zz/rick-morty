@@ -1,4 +1,5 @@
 import React from "react";
+import './char.css';
 //allCharstan gelen data type 
 interface IProps {
     id?: number | null;
@@ -14,14 +15,23 @@ const CharList: React.FC<IProps> = (props) => {
 
     return (
         <>
-            <img src={props.image || " "} alt="img" />
-            <div className="side-content">
-                <p><strong>id:</strong> {props.id}</p>
-                <p>
-                    <strong>Character name:</strong> {props.name}
-                </p>
-                <p><strong>Location:</strong> {props.location.name}</p>
+            <div className="card-component">
+                <div className="image-char">
+                    <img src={props.image || " "} alt="img" />
+                </div>
+                <div className="side-content">
+                    <div >
+                        <p><strong>id:</strong> {props.id}</p>
+                    </div>
+                    <div >
+                        <p>
+                            <strong>Name:</strong> {props.name}
+                        </p>
+                        <p><strong>Location:</strong> {props.location.name}</p>
+                    </div>
+                </div>
             </div>
+
         </>
     );
 };
